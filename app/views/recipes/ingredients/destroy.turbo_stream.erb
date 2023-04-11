@@ -1,0 +1,7 @@
+<% if @ingredient %>
+  <%= turbo_stream.replace "ingredient_#{@id}",
+    partial: "recipes/ingredient_fields",
+    locals: { ingredient: @ingredient, destroy: true } %>
+<% else %>
+  <%= turbo_stream.remove "ingredient_#{@id}" %>
+<% end %>
